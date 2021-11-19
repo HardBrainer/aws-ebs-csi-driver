@@ -1,4 +1,7 @@
 # Helm chart
+## v2.4.1
+
+* Move node affinity to values
 
 ## v2.4.0
 

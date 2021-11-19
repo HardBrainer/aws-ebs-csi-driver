@@ -152,7 +152,16 @@ node:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: "10%"
-
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: eks.amazonaws.com/compute-type
+            operator: NotIn
+            values:
+            - fargate
+            
 storageClasses: []
 # Add StorageClass resources like:
 # - name: ebs-sc
